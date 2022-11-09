@@ -1,0 +1,51 @@
+@use './var.scss' as *;
+
+@mixin flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin body{
+    font-size: 16px;
+    font-family: $font-family;
+}
+
+@mixin border-radius($radius){
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius:$radius;
+    -ms-border-radius: $radius
+}
+
+@mixin size($sizeW, $sizeH, $radius: 0){
+    width: $sizeW;
+    height: $sizeH;
+
+    @if $radius != 0{
+        @include border-radius($radius)
+    }
+}
+
+@mixin button{
+    @include size(150px, 3rem, $radius: 50%);
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+@mixin transition($seconds){
+    transition: ease all $seconds;
+}
+
+@mixin shadow($shadowX, $shadowY, $blur, $shadowColor, $shadowAlpha){
+    box-shadow:$shadowX $shadowY $blur rgba($color: $shadowColor, $alpha: $shadowAlpha);
+}
