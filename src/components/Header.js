@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
      <NavBar />
-     <ItemListContainer greeting="Bienvenido a Petmi!" />
+     <ItemListContainer greeting="Testeando el commit!!" />
     </header>
   )
 }
