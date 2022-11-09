@@ -1,3 +1,30 @@
-h1{
-    color: yellow;
+@use '../../assets/mixins.scss' as *;
+@use '../../assets/var.scss' as var;
+
+.itemListContainer{
+    @include size(100%, calc(100vh - 4rem), $radius: 0);
+    @include flex-row;
+    @include flex-center;
+
+    .banner, .greeting{
+        @include size(50%, 100%, $radius: 0);
+        @include flex-col;
+        @include flex-center;
+    }
+
+    .banner{
+        background:var.$accentColor;
+    }
+
+    .greeting{
+        background:var.$yellowPrimary;
+    }
+
+    h1{
+        color: var.$text-color;
+        text-shadow: 0 3px 6px rgba($color: #000000, $alpha: .20);
+        font-size: 16vmin;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 }

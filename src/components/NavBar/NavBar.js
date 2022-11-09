@@ -3,7 +3,7 @@ import Logo from '../../assets/logo.svg';
 import NavItem from "./NavItem";
 import CartWidget from './CartWidget';
 import './NavBar.scss';
-import { faDog, faCat, faCommentDots, faCrow } from '@fortawesome/free-solid-svg-icons' 
+import { faDog, faCat, faPaw, faChevronDown } from '@fortawesome/free-solid-svg-icons' 
 
 function NavBar() {
 
@@ -15,8 +15,7 @@ function NavBar() {
       <ul>
         <NavItem link="#" linkLabel="Perros" icon={faDog} />
         <NavItem link="#" linkLabel="Gatos" icon={faCat} />
-        <NavItem link="#" linkLabel="Aves" icon={faCrow} />
-        <NavItem link="#" linkLabel="Blog" icon={faCommentDots} />
+        <NavItem link="#" linkLabel="Alimentos" icon={faPaw} />
       </ul>
       <CartWidget />
     </nav>

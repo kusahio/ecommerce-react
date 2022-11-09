@@ -6,6 +6,7 @@ function CartWidget() {
   return (
     <button className='cartWidget'>
       <FontAwesomeIcon icon={faCartShopping} />
+      <span>5</span>
     </button>
   )
 }

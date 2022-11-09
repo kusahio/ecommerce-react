@@ -9,11 +9,27 @@
     background: var.$white;
     color: var.$accentColor;
     border: 2px solid var.$accentColor;
+    cursor: pointer;
 
     &:hover{
         background: var.$accentColor;
         color: var.$white;
         @include shadow(0, 8px, 16px, #000, .16);
+
+        span{
+            background: var.$white;
+            color: var.$accentColor
+        }
+    }
+
+    span{
+        @include flex-row;
+        @include flex-center;
+        @include size(1.5rem, 1.5rem, $radius: 2rem);
+        font-size: 1rem;
+        font-weight: 500;
+        color: var.$accentColor;
+        margin-left: .5rem;
     }
 
 }

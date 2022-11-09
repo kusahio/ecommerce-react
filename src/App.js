@@ -1,10 +1,14 @@
-import Header from './components/Header';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/NavBar/ItemListContainer';
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <header>
+        <NavBar />
+        <ItemListContainer greeting="hola" />
+      </header>
       <section>
 
       </section>
