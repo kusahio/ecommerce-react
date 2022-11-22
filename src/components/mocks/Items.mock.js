@@ -1,0 +1,39 @@
+import Alimento from '../../assets/images/alimento-perro-alaska-15-kg.jpg';
+import Snack from '../../assets/images/purina-feliz-travesuras.jpg';
+import Ball from '../../assets/images/pelota-cuerda.jpg';
+import catBed from '../../assets/images/cama-gato.jpg';
+
+export const ItemsMock = [
+    {
+        id: '1',
+        category: 'Perros',
+        brand: 'Alaska',
+        description: 'Alimento Premium Perro Adulto Raza Mediana y Grande',
+        price: '36.000',
+        img: Alimento
+    },
+    {
+        id: '2',
+        category: 'Gatos',
+        brand: 'Felix',
+        description: 'Travesuras Party Mix',
+        price: '1.440',
+        img: Snack
+    },
+    {
+        id: '3',
+        category: 'Accesorios',
+        brand: 'Jolly Pets',
+        description: 'Pelota con Cuerda Romp N Roll 15 Cm',
+        price: '18.990',
+        img: Ball
+    },
+    {
+        id: '4',
+        category: 'Accesorios',
+        brand: 'Pawise',
+        description: 'Cama Gato Igloo Gris',
+        price: '25.990',
+        img: catBed
+    }
+]

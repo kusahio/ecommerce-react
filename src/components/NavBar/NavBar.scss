@@ -4,7 +4,7 @@ nav {
     @include flex-row;
     @include flex-center;
     @include size(100%, 4rem, $radius: 0);
-    /*@include shadow(0, 3px, 6px, #000, .16);*/
+    @include shadow(0, 3px, 6px, #000, .16);
     padding: 0 16vw;
 
     .logo{

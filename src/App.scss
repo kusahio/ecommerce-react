@@ -4,6 +4,10 @@
 .App {
   @include flex-col;
 
+  header{
+    z-index: 1;
+  }
+
   footer{
     display: none;
     height: 4rem;

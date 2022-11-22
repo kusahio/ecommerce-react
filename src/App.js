@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/NavBar/ItemListContainer';
+import ItemListContainer from './components/Items/ItemListContainer';
+import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import './App.scss';
 
 function App() {
@@ -10,10 +11,10 @@ function App() {
     <div className="App">
       <header>
         <NavBar />
-        <ItemListContainer greeting="hola" />
       </header>
       <section>
-
+      <ItemListContainer/>
+      <ItemDetailContainer />
       </section>
       <footer>
 
