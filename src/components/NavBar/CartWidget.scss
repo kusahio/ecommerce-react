@@ -1,9 +1,9 @@
 @use '../../assets/mixins.scss' as *;
 @use '../../assets/var.scss' as var;
 
-.cartWidget{
-    @include flex-row;
-    @include flex-center;
+.cartWidget {
+    @include flex-direction(row);
+    @include flex-position(center, center);
     @include size(100px, 3rem, $radius: 2rem);
     @include transition(.3s);
     background: var.$white;
@@ -11,20 +11,20 @@
     border: 2px solid var.$accentColor;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
         background: var.$accentColor;
         color: var.$white;
         @include shadow(0, 8px, 16px, #000, .16);
 
-        span{
+        span {
             background: var.$white;
             color: var.$accentColor
         }
     }
 
-    span{
-        @include flex-row;
-        @include flex-center;
+    span {
+        @include flex-direction(row);
+        @include flex-position(center, center);
         @include size(1.5rem, 1.5rem, $radius: 2rem);
         font-size: 1rem;
         font-weight: 500;

@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-//import { useParams } from "react-router-dom";
-
-// Own components
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-
-// Mock
 import { ItemsMock } from '../mocks/Items.mock';
 
 const ItemListContainer = () => {
-  //const { category } = useParams();
+  const { category } = useParams();
+  console.log(category);
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -17,27 +15,23 @@ const ItemListContainer = () => {
         resolve(ItemsMock);
       }, 2000)
     )
-    .then( (data) => setProducts(data) );
-    /* .then((data) => {
+    .then((data) => {
       if (category) {
         const categories = data.filter(
-          (product) => product.category === category
-        );
+          (product) => product.category === category);
         setProducts(categories);
       } else {
         setProducts(data);
       }
-    }); */
-  }, []);
+    });
+  }, [category]);
 
   if (products.length === 0) {
     return <p>Loading...</p>;
   }
 
   return (
-    <div>
       <ItemList products={products} />
-    </div>
   );
 };
 

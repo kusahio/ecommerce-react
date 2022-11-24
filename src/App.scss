@@ -2,7 +2,7 @@
 @use './assets/var.scss' as var;
 
 .App {
-  @include flex-col;
+  @include flex-direction(column);
 
   header{
     z-index: 1;

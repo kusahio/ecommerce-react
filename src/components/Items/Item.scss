@@ -1,0 +1,22 @@
+@use '../../assets/mixins' as mx;
+@use '../../assets/var';
+
+.productBox{
+    @include mx.flex-direction(column);
+    width: 20%;
+    margin: 0 1rem;
+
+    img{
+        width: 100%;
+        transition: ease all .2s;
+        margin-bottom: 1rem;
+    }
+    img:hover{
+        transform: scale(1.1);
+    }
+
+    .description{
+        font-weight: 700;
+        margin-bottom: .5rem;
+    }
+}

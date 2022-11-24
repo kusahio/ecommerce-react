@@ -1,21 +1,27 @@
 
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.svg';
-import NavItem from "./NavItem";
 import CartWidget from './CartWidget';
 import './NavBar.scss';
-import { faDog, faCat, faBaseball } from '@fortawesome/free-solid-svg-icons' 
+//import { faDog, faCat, faBaseball } from '@fortawesome/free-solid-svg-icons'
 
 function NavBar() {
 
   return (
     <nav>
-      <a className='logo' href='#' title='Logo'>
+      <Link to='/'>
         <img className='logo' src={Logo} alt='Logo' />
-      </a>
+      </Link>
       <ul>
-        <NavItem link="#" linkLabel="Perros" icon={faDog} />
-        <NavItem link="#" linkLabel="Gatos" icon={faCat} />
-        <NavItem link="#" linkLabel="Accesorios" icon={faBaseball} />
+        <Link to='/category/perros'>
+          Perros
+        </Link>
+        <Link to='/category/gatos'>
+          Gatos
+        </Link>
+        <Link to='/category/accesorios'>
+          Accesorios
+        </Link>
       </ul>
       <CartWidget />
     </nav>

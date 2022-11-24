@@ -1,12 +1,13 @@
 import Item from './Item';
+import './ItemList.scss'
 
 const ItemList = ({ products }) => {
   return (
-    <ul>
-      {products.map((product) => (
-        <Item product={product} />
+    <div className='productGrid'>
+      {products.map((product, index) => (
+        <Item key={index} product={product} />
       ))}
-    </ul>
+    </div>
   );
 };
 

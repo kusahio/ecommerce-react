@@ -1,0 +1,8 @@
+@use '../../assets/mixins' as mx;
+@use '../../assets/var';
+
+.productGrid{
+    @include mx.flex-direction(row);
+    flex-wrap: wrap;
+    padding: 2vw;
+}

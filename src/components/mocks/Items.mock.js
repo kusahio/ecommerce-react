@@ -6,7 +6,7 @@ import catBed from '../../assets/images/cama-gato.jpg';
 export const ItemsMock = [
     {
         id: '1',
-        category: 'Perros',
+        category: 'perros',
         brand: 'Alaska',
         description: 'Alimento Premium Perro Adulto Raza Mediana y Grande',
         price: '36.000',
@@ -14,7 +14,7 @@ export const ItemsMock = [
     },
     {
         id: '2',
-        category: 'Gatos',
+        category: 'gatos',
         brand: 'Felix',
         description: 'Travesuras Party Mix',
         price: '1.440',
@@ -22,7 +22,7 @@ export const ItemsMock = [
     },
     {
         id: '3',
-        category: 'Accesorios',
+        category: 'accesorios',
         brand: 'Jolly Pets',
         description: 'Pelota con Cuerda Romp N Roll 15 Cm',
         price: '18.990',
@@ -30,7 +30,7 @@ export const ItemsMock = [
     },
     {
         id: '4',
-        category: 'Accesorios',
+        category: 'accesorios',
         brand: 'Pawise',
         description: 'Cama Gato Igloo Gris',
         price: '25.990',

@@ -1,12 +1,13 @@
-import ItemDetailContainer from "../components/ItemDetailContainer";
+import ItemDetailContainer from '../components/Items/ItemDetailContainer';
 import { Layout } from "../components/Layout";
 
-const ItemView = () => {
+function ItemView(){
   return (
     <Layout>
       <ItemDetailContainer />
     </Layout>
-  );
-};
+  )
+}
 
 export default ItemView;
+
