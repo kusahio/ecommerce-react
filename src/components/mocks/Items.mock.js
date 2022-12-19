@@ -10,6 +10,7 @@ export const ItemsMock = [
         brand: 'Alaska',
         description: 'Alimento Premium Perro Adulto Raza Mediana y Grande',
         price: '36.000',
+        stock: 12,
         img: Alimento
     },
     {
@@ -18,6 +19,7 @@ export const ItemsMock = [
         brand: 'Felix',
         description: 'Travesuras Party Mix',
         price: '1.440',
+        stock: 5,
         img: Snack
     },
     {
@@ -26,6 +28,7 @@ export const ItemsMock = [
         brand: 'Jolly Pets',
         description: 'Pelota con Cuerda Romp N Roll 15 Cm',
         price: '18.990',
+        stock: 8,
         img: Ball
     },
     {
@@ -34,6 +37,7 @@ export const ItemsMock = [
         brand: 'Pawise',
         description: 'Cama Gato Igloo Gris',
         price: '25.990',
+        stock: 5,
         img: catBed
     }
 ]

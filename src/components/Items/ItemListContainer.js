@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { ItemsMock } from '../mocks/Items.mock';
+import {getFirestore, doc, getDoc, getDocs} from 'firebase/firestore'
 
 const ItemListContainer = () => {
   const { category } = useParams();
-  console.log(category);
 
   const [products, setProducts] = useState([]);
 

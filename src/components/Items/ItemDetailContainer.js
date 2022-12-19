@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = ( ) => {
 
   const { id } = useParams();
-  console.log( id )
 
   const [itemD, setItem] = useState(null);
 
@@ -17,7 +16,6 @@ const ItemDetailContainer = ( ) => {
         const itemResult = data.find(
           (item) => item.id === id)
           setItem(itemResult)
-          console.log(itemResult);
       }
     });
   }, [id]);
