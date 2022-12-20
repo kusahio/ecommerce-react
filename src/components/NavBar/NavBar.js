@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.svg';
-import CartWidget from './CartWidget';
+import CartWidget from '../cart/CartWidget';
 import './NavBar.scss';
 //import { faDog, faCat, faBaseball } from '@fortawesome/free-solid-svg-icons'
 

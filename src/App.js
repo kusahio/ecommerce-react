@@ -4,21 +4,20 @@ import './App.scss';
 
 function App() {
 
-  
+
 
   return (
-    
-    <div className="App">
-      <header>
-        <NavBar />
-      </header>
-      <section>
-      <ItemListContainer/>
-      </section>
-      <footer>
+      <div className="App">
+        <header>
+          <NavBar />
+        </header>
+        <section>
+          <ItemListContainer />
+        </section>
+        <footer>
 
-      </footer>
-    </div>
+        </footer>
+      </div>
   );
 }
 

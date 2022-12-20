@@ -4,10 +4,10 @@ import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
+import { CartContextProvider } from './context/CartContext';
+/*import { initializeApp } from "firebase/app";
 
-import { initializeApp } from "firebase/app";
-
-const firebaseConfig = {
+ const firebaseConfig = {
   apiKey: "AIzaSyA1NsFax5NJDdlmz66MsutvjSTm3sFKT9s",
   authDomain: "ecommercereact-c9de0.firebaseapp.com",
   projectId: "ecommercereact-c9de0",
@@ -16,12 +16,14 @@ const firebaseConfig = {
   appId: "1:125805907201:web:b08e3eb0c73a0b17df9f00"
 };
 
-initializeApp(firebaseConfig);
+initializeApp(firebaseConfig); */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <RouterProvider router={router}/>
+    <CartContextProvider>
+      <RouterProvider router={router} />
+    </CartContextProvider>
   </React.StrictMode>
 );
 
