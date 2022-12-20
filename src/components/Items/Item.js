@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Item.scss';
 
-const Item = ({ product }) => {
+const Item = ({ product, quantityAdded  }) => {
   const pathItem = '/item/';
   return (
     <ul className='productBox'>
@@ -13,6 +13,10 @@ const Item = ({ product }) => {
         <li className='description'>{product.description}</li>
       </Link>
       <li className='price'>${product.price}</li>
+      <span>
+      {quantityAdded ? "Agregados" : "En Stock"}:{" "}
+      {quantityAdded || product.stock}
+      </span>
     </ul>
   );
 };

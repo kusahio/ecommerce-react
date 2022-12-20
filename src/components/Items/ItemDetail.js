@@ -20,12 +20,10 @@ const ItemDetail = ({ item }) => {
         if (currentStock < count) alert("No hay suficiente stock de este producto");
         else setCurrentStock(currentStock - count);
         addItem(item, count);
-        console.log(item, count)
     }
 
     function handleCheckout() {
-        if (currentStock < count) alert (`No puedes agregar más de ${currentStock}`)
-        else navigate("/cart");
+         navigate('/cart');
     }
 
     return (
