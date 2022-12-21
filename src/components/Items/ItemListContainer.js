@@ -1,37 +1,16 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useGetItem } from "../../hooks/useGetItem";
 import ItemList from "./ItemList";
-import { ItemsMock } from '../mocks/Items.mock';
-import {getFirestore, doc, getDoc, getDocs} from 'firebase/firestore'
+import Loader from "../Loader";
 
 const ItemListContainer = () => {
-  const { category } = useParams();
+  const items = useGetItem();
 
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(ItemsMock);
-      }, 2000)
-    )
-    .then((data) => {
-      if (category) {
-        const categories = data.filter(
-          (product) => product.category === category);
-        setProducts(categories);
-      } else {
-        setProducts(data);
-      }
-    });
-  }, [category]);
-
-  if (products.length === 0) {
-    return <p>Loading...</p>;
+  if(!items){
+    return <Loader />
   }
 
   return (
-      <ItemList products={products} />
+    <ItemList products={items} />
   );
 };
 

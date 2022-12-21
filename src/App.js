@@ -3,9 +3,6 @@ import ItemListContainer from './components/Items/ItemListContainer';
 import './App.scss';
 
 function App() {
-
-
-
   return (
       <div className="App">
         <header>

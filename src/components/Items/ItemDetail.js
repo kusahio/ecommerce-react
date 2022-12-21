@@ -2,14 +2,17 @@ import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "./ItemCount";
+import { useGetItemImg } from "../../hooks/useGetItemImg";
+import Loader from "../Loader";
 
 const ItemDetail = ({ item }) => {
 
-    const { addItem } = useContext(CartContext)
+    const { addItem, isInCart  } = useContext(CartContext)
     const navigate = useNavigate();
     const [count, setCount] = useState(1);
     const [currentStock, setCurrentStock] = useState(item.stock);
     const maxQuantity = currentStock;
+    const img = useGetItemImg(item.img);
 
     function handleCount(type) {
         if (type === "plus" && count < maxQuantity) setCount(count + 1);
@@ -29,7 +32,10 @@ const ItemDetail = ({ item }) => {
     return (
         <div>
             <ul>
-                <img src={item.img} alt="item" />
+                <li>
+                {!img ? ( <Loader />) : (
+                <img className='' src={img} alt={item.description} />)}
+                </li>
                 <li>{item.brand}</li>
                 <li>{item.description}</li>
                 <li>${item.price}</li>
@@ -37,17 +43,13 @@ const ItemDetail = ({ item }) => {
             </ul>
 
             <div className=''>
-                {/* Count */}
-                {currentStock > 0 ? (
-                    <ItemCount count={count} handleCount={handleCount} />
-                ) : (
-                    <span className=''>Sin stock</span>
-                )}
+                {currentStock > 0 ? (<ItemCount count={count} handleCount={handleCount} />) :
+                (<span className=''>Sin stock</span>)}
                 <div className=''>
                     <button onClick={handleAdd} className='' disabled={currentStock === 0}>
                         Agregar al carrito
                     </button>
-                    <button onClick={handleCheckout} className=''>
+                    <button disabled={!isInCart(item.id)} onClick={handleCheckout} className=''>
                         Finalizar Compra
                     </button>
                 </div>

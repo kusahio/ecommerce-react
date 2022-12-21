@@ -1,12 +1,20 @@
 import { Link } from 'react-router-dom';
+import { useGetItemImg } from '../../hooks/useGetItemImg';
+import Loader from '../Loader';
 import './Item.scss';
 
 const Item = ({ product, quantityAdded  }) => {
   const pathItem = '/item/';
+  const img = useGetItemImg(product.img);
+
+  if(!img){
+    return <Loader />
+  }
+
   return (
     <ul className='productBox'>
       <Link to={pathItem + product.id}>
-        <li><img src={product.img} alt="Product" /></li>
+        <li><img src={img} alt="Product" /></li>
       </Link>
       <li className='brand'>{product.brand}</li>
       <Link to={pathItem + product.id}>
