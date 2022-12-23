@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './Trash.scss'
 
 const TrashWidget = ( { itemId } ) => {
 
@@ -9,7 +10,7 @@ const TrashWidget = ( { itemId } ) => {
 
     return(
         <button onClick={() => removeItem(itemId)} className='clear'>
-            <FontAwesomeIcon icon={faTrash} />
+            <FontAwesomeIcon icon={faTrash} /> Eliminar
         </button>
     )
 }

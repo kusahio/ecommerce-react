@@ -1,52 +1,46 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { Layout } from '../components/Layout';
 import { useNavigate } from 'react-router-dom';
 import Item from '../components/Items/Item';
-import Loader from '../components/Loader';
 import { CartContext } from '../context/CartContext';
 import TrashWidget from '../components/cart/TrashWidget';
+import './CartView.scss';
 
 
 function CartView() {
-  const [isLoading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { productsAdded: items, totalAmount } = useContext(CartContext);
 
-  const { productsAdded, clear } = useContext(CartContext);
+  const goToCheckout = () => {
+    navigate("/checkout");
+  };
 
-  const handleFinishPurchase = () => {
-    setLoading(true);
-    setTimeout(() => {
-      clear();
-      setLoading(false);
-      alert("Compra finalizada");
-      navigate("/");
-    }, 2000);
-  }
 
   return (
     <Layout >
-      cart view
-      {productsAdded.length === 0 ? (
+      {items.length === 0 ? (
         <h1 className=''>No has agregado productos</h1>) :
-        (<div>
-          <div className=''>
-            {productsAdded.map((product, index) => {
+        (<div className='cartview'>
+          {items.map((product, index) => {
               const quantityAdded = product.quantityAdded;
               
               return (
-                <div key={index} className=''>
+                <div key={index} className='block'>
                   <Item  product={product.item} quantityAdded={quantityAdded} />
                   <TrashWidget  itemId={product.item.id} />
                 </div>
               );
             })}
-          </div>
-          <div className=''>
-            {isLoading ? (<Loader />) :
-              (<button onClick={handleFinishPurchase} className=''>
-                Finalizar Compra
-              </button>)
-            }
+          <div className='next'>
+          <span>
+                  Total a pagar: <strong>${totalAmount}</strong>
+                </span>
+                <button
+                  onClick={goToCheckout}
+                  className="rounded-lg p-2 bg-gray-800 text-white"
+                >
+                  Ir al Checkout
+                </button>
           </div>
         </div>
         )}

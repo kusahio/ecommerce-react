@@ -2,9 +2,16 @@ import NavBar from './NavBar/NavBar';
 
 export const Layout = ({ children }) => {
   return (
-    <main>
-      <NavBar />
-      {children}
-    </main>
+    <div className='App'>
+      <header>
+        <NavBar />
+      </header>
+      <section className='container'>
+        {children}
+      </section>
+      <footer>
+
+      </footer>
+    </div>
   );
 };

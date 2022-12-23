@@ -4,10 +4,11 @@ import { CartContext } from "../../context/CartContext";
 import ItemCount from "./ItemCount";
 import { useGetItemImg } from "../../hooks/useGetItemImg";
 import Loader from "../Loader";
+import './ItemDetail.scss';
 
 const ItemDetail = ({ item }) => {
 
-    const { addItem, isInCart  } = useContext(CartContext)
+    const { addItem, isInCart } = useContext(CartContext)
     const navigate = useNavigate();
     const [count, setCount] = useState(1);
     const [currentStock, setCurrentStock] = useState(item.stock);
@@ -26,32 +27,34 @@ const ItemDetail = ({ item }) => {
     }
 
     function handleCheckout() {
-         navigate('/cart');
+        navigate('/cart');
     }
 
     return (
-        <div>
-            <ul>
-                <li>
-                {!img ? ( <Loader />) : (
-                <img className='' src={img} alt={item.description} />)}
-                </li>
-                <li>{item.brand}</li>
-                <li>{item.description}</li>
-                <li>${item.price}</li>
-                {currentStock > 0 && (<li>Stock: {currentStock}</li>)}
-            </ul>
+        <div className='productDetail'>
+            <div className="img">
+                {!img ? (<Loader />) : (
+                    <img className='' src={img} alt={item.description} />)}
+            </div>
+            <div className="details">
+                <ul>
+                    <li className="brand">{item.brand}</li>
+                    <li className="description">{item.description}</li>
+                    <li className="price">${item.price}</li>
+                    {currentStock > 0 && (<li className="stock">Stock: {currentStock}</li>)}
+                </ul>
 
-            <div className=''>
-                {currentStock > 0 ? (<ItemCount count={count} handleCount={handleCount} />) :
-                (<span className=''>Sin stock</span>)}
-                <div className=''>
-                    <button onClick={handleAdd} className='' disabled={currentStock === 0}>
-                        Agregar al carrito
-                    </button>
-                    <button disabled={!isInCart(item.id)} onClick={handleCheckout} className=''>
-                        Finalizar Compra
-                    </button>
+                <div className='actions'>
+                    {currentStock > 0 ? (<ItemCount count={count} handleCount={handleCount} />) :
+                        (<span className=''>Sin stock</span>)}
+                    <div className='buttons'>
+                        <button onClick={handleAdd} className='' disabled={currentStock === 0}>
+                            Agregar al carrito
+                        </button>
+                        <button disabled={!isInCart(item.id)} onClick={handleCheckout} className=''>
+                            Finalizar Compra
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

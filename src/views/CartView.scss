@@ -1,0 +1,33 @@
+@use '../assets/var';
+
+.cartview{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+
+    .block{
+        width: 20%;
+
+    }.productBoxContainer{
+        width: 100%;
+    }
+
+    .next{
+        width: 100%;
+
+        button{
+            height: 2.5rem;
+            border-radius: 1.5rem;
+            background: var.$accentColor;
+            color: var.$white;
+            border: none;
+            font-size: .875rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+}

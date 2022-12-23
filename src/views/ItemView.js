@@ -10,4 +10,3 @@ function ItemView(){
 }
 
 export default ItemView;
-

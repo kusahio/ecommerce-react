@@ -4,5 +4,6 @@
 .productGrid{
     @include mx.flex-direction(row);
     flex-wrap: wrap;
-    padding: 2vw;
+    padding: 2rem 1rem;
+    width: 100%;
 }
